@@ -1,0 +1,73 @@
+<!--~ resizeable stuff -->
+<script>
+    var inner = document.getElementsByClassName("inner");
+    var imgL = document.getElementsByClassName("img-l");
+    var imgR = document.getElementsByClassName("img-r");
+    var content = document.getElementById('sidebar');
+    var elements = document.getElementsByClassName("headText");
+    var i;
+    
+    // List View
+    function smallMenuView() {
+        console.log("small")
+        for (i = 0; i < elements.length; i++) {
+            elements[i].innerHTML = "";
+        }
+    }
+
+    // Grid View
+    function bigMenuView() {
+        console.log("full")
+        for (i = 0; i < elements.length; i++) {
+            elements[0].innerHTML = "Home"
+            elements[1].innerHTML = "Games"
+            elements[2].innerHTML = "Meditation"
+            elements[3].innerHTML = "Support"
+            elements[4].innerHTML = "Cyber Safety"
+        }
+    }
+    
+    function bigSidebarView() {
+        content.innerHTML = `
+            <button class="button-75 tablinks" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">2048</span></button>
+            <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Tetris</span></button>
+            <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Sling Drift</span></button>
+            <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidefour')"                ><span class="text">Tower Defence</span></button>
+            <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidefive')"                ><span class="text">Build your joy</span></button>
+        `;
+        document.documentElement.style.setProperty('--side-bar-width', '200px');
+    }
+
+    function smallSidebarView() {
+        content.innerHTML = `
+            <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">2048</span></button>
+            <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Tetris</span></button>
+            <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Sling Drift</span></button>
+            <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidefour')"                ><span class="text">Tower Defence</span></button>
+            <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidefive')"                ><span class="text">Build your joy</span></button>
+        `;
+        document.documentElement.style.setProperty('--side-bar-width', '55px');
+    }
+
+    function checkScreenWidth() {
+        if (window.innerWidth < 965) {
+            smallSidebarView();
+            document.getElementById("h1").innerHTML = "";
+            smallMenuView();
+        } else if (window.innerWidth < 1000) {
+            smallSidebarView();
+            document.getElementById("h1").innerHTML = "";
+            bigMenuView();
+        } else if (window.innerWidth < 1082) {
+            bigSidebarView();
+            document.getElementById("h1").innerHTML = "";
+            bigMenuView();
+        } else {
+            bigSidebarView();
+            document.getElementById("h1").innerHTML = "Guardian";
+            bigMenuView(); 
+        }
+    }
+    checkScreenWidth();
+    window.addEventListener('resize', checkScreenWidth);
+</script>

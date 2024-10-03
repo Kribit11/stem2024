@@ -1,0 +1,13 @@
+<button class="btn" onclick="download('Build_Your_Joy.mcworld')"> <i class="fa fa-download"></i>download </button>
+
+<!--~ donwload button -->
+<script>
+    function download(url) {
+        const a = document.createElement('a')
+        a.href = url
+        a.download = url.split('/').pop()
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+    }
+</script>

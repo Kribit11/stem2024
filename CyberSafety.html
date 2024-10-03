@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Guardian</title>
+
+        <!--~ stylesheet -->
+        <link rel="stylesheet" href="style-body.css">
+        <script> /* have this script after the stylesheet to update the screen height */
+            let screenHeight = window.innerHeight-60;
+            if (screenHeight > 631) {
+                document.documentElement.style.setProperty('--screen-height', `${screenHeight}px`);
+            }
+        </script>
+        <link rel="icon" href="images/favicon-trans.png">
+
+        <!--~ fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!--~ header -->
+        <header>
+            <div id="left">
+                <img id="titleimg" src="images/favicon-trans.png" alt="title img">
+                <span id="h1">Guardian</span>
+            </div>
+            <div id="menu">
+                <img onclick="window.location.href='index.html';"       class="link icon" id="home" src="images/home-l.png" alt="home">
+                <p   onclick="window.location.href='index.html';"       class="link headText">Home</p>
+                <img onclick="window.location.href='games.html';"       class="link icon" id="games" src="images/games-l.png" alt="games">
+                <p   onclick="window.location.href='games.html';"       class="link headText">Games</p>
+                <img onclick="window.location.href='meditation.html';"  class="link icon" id="meditation" src="images/meditation-l.png" alt="meditation">
+                <p   onclick="window.location.href='meditation.html';"  class="link headText">Meditation</p>
+                <img onclick="window.location.href='support.html';"     class="link icon" id="support" src="images/support-l.png" alt="support">
+                <p   onclick="window.location.href='support.html';"     class="link headText">Support</p>
+                <img onclick="window.location.href='CyberSafety.html';" class="link icon" id="CyberSafety" src="images/CyberSafety-l.png" alt="Cyber Safety">
+                <p   onclick="window.location.href='CyberSafety.html';" class="link headText">Cyber Safety</p>
+            </div>
+        </header>
+
+        <!--~ body -->
+        <div id="main">
+            <div id="intro">
+                <!--~ sidebar -->
+                <div id="sidebar">
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">Cyberbullying</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Causal Tips</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Tips for Teens</span></button>
+                    
+                
+                </div>
+                <div id="body">
+
+                    <!--~ widgets -->
+                    <div id="sideone" class="tabcontent">
+                        <h1>What is Cyberbullying?</h1>
+                        <div class="widget" style="text-align: start;">
+                            <span> Cyberbullying is when someone uses the internet to be mean to a child or young person so they feel bad or upset. It can happen on a social media site, game, app, or any other online or electronic service or platform. It can include: posts, comments, texts, messages, chats, livestreams, memes, images, videos and emails.</span>
+                            <span>These are some examples of ways the internet can be used to make someone feel bad or upset:</span>
+                            <ul>
+                                <li>Sending hurtful messages about them.</li>
+                                <li>Sharing embarrassing photos or videos of them.</li>
+                                <li>Spreading nasty online gossip about them.</li>
+                                <li>Leaving them out online.</li>
+                                <li>Creating fake accounts in their name.</li>
+                                <li>Tricking them into believing you are someone else.</li>
+                            </ul>
+                            <span>Thank you to <a href="https://www.esafety.gov.au/key-topics/cyberbullying">esafety.gov.au</a> for the safety tips to support young individuals</span>
+                        </div>
+                    </div>
+                    <div id="sidetwo" class="tabcontent">
+                        <h1>Casual Tips for anyone</h1>
+                        <div class="widget" style="text-align: start;">
+                            <ul>
+                            <strong>Never Leave Your Device Unattended:</strong>
+                                <li>Smartphones, laptops, and tablets have resale value, but cybercriminals now focus on stealing data rather than reselling devices.</li>
+                                <li>Information like passwords, addresses, and Social Security numbers is valuable to criminals.</li>
+                                <li>Children are vulnerable targets due to school and sports activities that store such information. Teach them to keep devices close.</li>
+                            <strong>Click with Caution:</strong>
+                                <li>Phishing is dangerous; one careless click can install malicious software.</li>
+                                <li>Teach kids not to automatically click on email links.</li>
+                                <li>Hover over links to verify reputable addresses.</li>
+                                <li>Beware of spelling mistakes, odd emails, and urgent requests.</li>
+                                <li>Use high-quality antivirus software to catch phishing emails.</li>
+                            <strong>Never Share Your Password:</strong>
+                                <li>Many people share passwords, risking exposure of stored data.</li>
+                                <li>Teach kids to use strong, unique passwords with a mix of upper/lowercase letters, symbols, and numbers.</li>
+                                <li>Change passwords regularly and avoid reusing them across accounts.</li>
+                                <li>Consider using a password manager like Norton Identity Safe.</li>
+                            <strong>Be Wary of Social Media:</strong>
+                                <li>Check privacy settings on children’s social media accounts.</li>
+                                <li>Adjust settings to the highest privacy level.</li>
+                                <li>Warn kids not to accept friend requests from unknown people or bots.</li>
+                                <li>Disable location services to deter stalkers.</li>
+                            <strong>Be a Good Online Citizen:</strong>
+                                <li>Remind kids that the internet is permanent; what’s said online stays online.</li>
+                                <li>Encourage positive online etiquette and discourage mean behaviour.</li>
+                                <li>Let them know that cyberbullying victims are protected by the law.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="sidethree" class="tabcontent">
+                        <h1>Tip for Teens</h1>
+                        <div class="widget" style="text-align: start;">
+                            <ul>
+                            <strong>Use a Password Management System:</strong>
+                                <li>Encourage your teens to use a password manager. These tools generate and store unique, strong passwords for all their accounts. The best part? They only need to remember one master password to access all the others. It’s a smart way to enhance password security and reduce the risk of breaches.</li>
+                                <strong>Secure Social Media Accounts:</strong>
+                                <li>networks are popular among teens, but they can also attract cyber threats.</li>
+                            <strong>Remind your teens to:</strong>
+                                <li>Be cautious if someone they haven’t heard from in a while suddenly messages them. Their friend’s account might have been hacked.</li>
+                                <li>Never meet in person with someone they’ve only met online.</li>
+                                <li>Inform an adult if they receive messages from strangers.</li>
+                                <li>Regularly review privacy settings on their social media profiles.</li>
+                            <strong>Think Before You Post:</strong>
+                                <li>Teens often share personal milestones online, but they should be mindful of oversharing. Posting sensitive information like driver’s licenses or travel itineraries can be risky. Additionally, avoid sharing inappropriate photos that could attract online predators or negatively impact future opportunities.</li>
+                            <strong>Shop Safely Online:</strong>
+                                <li>If teens are allowed to shop online (which often depends on parental rules), teach them how to identify secure websites:</li>
+                                <li>Look for the “HTTPS” prefix in the website’s URL. This indicates that the site encrypts data during transmission.</li>
+                                <li>Check for a padlock icon next to the URL, another sign of a secure connection.</li>
+                            <strong>Keep Privacy Settings On:</strong>
+                                <li>Web browsers, mobile operating systems, and social media platforms all have privacy settings. Teens should:</li>
+                                <li>Familiarize themselves with these settings.</li>
+                                <li>Keep them turned on to protect their personal information.</li>
+                                <li>Understand that turning them off may expose their data to marketers or potential hackers.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--~ hide title on small screen -->
+        <script>
+            var inner = document.getElementsByClassName("inner");
+            var imgL = document.getElementsByClassName("img-l");
+            var imgR = document.getElementsByClassName("img-r");
+            var content = document.getElementById('sidebar');
+            var elements = document.getElementsByClassName("headText");
+            var i;
+            
+            // List View
+            function smallMenuView() {
+                console.log("small")
+                for (i = 0; i < elements.length; i++) {
+                    elements[i].innerHTML = "";
+                }
+            }
+
+            // Grid View
+            function bigMenuView() {
+                console.log("full")
+                for (i = 0; i < elements.length; i++) {
+                    elements[0].innerHTML = "Home"
+                    elements[1].innerHTML = "Games"
+                    elements[2].innerHTML = "Meditation"
+                    elements[3].innerHTML = "Support"
+                    elements[4].innerHTML = "Cyber Safety"
+                }
+            }
+            
+            function bigSidebarView() {
+                content.innerHTML = `
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">Cyberbullying</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Casual Tips</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Tips for Teens</span></button>
+                    
+                `;
+                document.documentElement.style.setProperty('--side-bar-width', '200px');
+            }
+
+            function smallSidebarView() {
+                content.innerHTML = `
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">Cyberbullying</span></button>
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Casual Tips</span></button>
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Tips for Teens</span></button>
+                    
+                `;
+                document.documentElement.style.setProperty('--side-bar-width', '55px');
+            }
+
+            function checkScreenWidth() {
+                if (window.innerWidth < 965) {
+                    smallSidebarView();
+                    document.getElementById("h1").innerHTML = "";
+                    smallMenuView();
+                } else if (window.innerWidth < 1000) {
+                    smallSidebarView();
+                    document.getElementById("h1").innerHTML = "";
+                    bigMenuView();
+                } else if (window.innerWidth < 1082) {
+                    bigSidebarView();
+                    document.getElementById("h1").innerHTML = "";
+                    bigMenuView();
+                } else {
+                    bigSidebarView();
+                    document.getElementById("h1").innerHTML = "Guardian";
+                    bigMenuView(); 
+                }
+            }
+            checkScreenWidth();
+            window.addEventListener('resize', checkScreenWidth);
+        </script>
+
+        <!--~ side tabs -->
+        <script>
+            function explore(evt, Name) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                    tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(Name).style.display = "flex";
+                evt.currentTarget.className += " active";
+            }
+            
+            document.getElementById("defaultOpen").click();
+        </script>
+
+        <!--~ dark/light mode -->
+        <div class="checkbox-wrapper-54">
+            <label class="switch">
+                <input type="checkbox" id="toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <script>
+            const toggle = document.getElementById('toggle');
+            const images = ['home', 'games', 'meditation', 'support', 'CyberSafety'];
+
+            //  Function to apply dark mode
+            function applyDarkMode() {
+                document.documentElement.style.setProperty('--black', '#f3eeeb');
+                document.documentElement.style.setProperty('--white', '#1d2a35');
+                images.forEach(id => {
+                    document.getElementById(id).src = `images/${id}-d.png`;
+                });
+            }
+
+            // Function to apply light mode
+            function applyLightMode() {
+                document.documentElement.style.setProperty('--black', '#1d2a35');
+                document.documentElement.style.setProperty('--white', '#f3eeeb');
+                images.forEach(id => {
+                    document.getElementById(id).src = `images/${id}-l.png`;
+                });
+            }
+
+            // Event listener for the toggle button
+            toggle.addEventListener('change', () => {
+                if (toggle.checked) {
+                    applyDarkMode();
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    applyLightMode();
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+
+            // Check the saved preference and apply it
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                toggle.checked = true;
+                applyDarkMode();
+            } else {
+                applyLightMode();
+            }
+        </script>
+    </body>
+</html>

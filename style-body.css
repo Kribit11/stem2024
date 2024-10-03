@@ -1,0 +1,336 @@
+:root{
+    --top: #ff8c00;
+    --bottom: #ff0080;
+    --black: #1d2a35;  /*^ this is for dark */
+    --white: #f3eeeb;  /*^  mode later on   */
+    --box-shadow: rgba(0, 0, 0, 0.3);
+    --screen-height: 100vh;
+}
+
+body {
+    margin: 0px !important; 
+    font-family: "DM Sans", sans-serif;
+    color: var(--black);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+/** header */
+header {
+    height: 90px;
+    width: 100%;
+    background: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    overflow: auto;
+    position: absolute;
+    overflow: hidden;
+}
+
+#menu {
+    display: flex;
+    color: var(--black);
+    flex-direction: row;
+    margin-right: 72px;
+    font-size: large;
+}
+
+#left{
+    display: flex;
+}
+
+#titleimg {
+    height: 75px; 
+    margin: 7.5px 0 7.5px 15px;
+}
+
+.icon {
+    height: 30px; 
+    margin: 28.5px 4.5px 28.5px 13.5px;
+}
+
+.link {
+    cursor: pointer;
+}
+
+#h1 {
+    font-size: xx-large;
+    font-family: "DM Sans", sans-serif;
+    color: var(--black);
+    margin: 10px 5px;
+    align-self: center;
+}
+
+p {
+    text-align: center;
+    align-self: center;
+    font-size: 21px;
+}
+
+/** body */
+a, a:hover, a:active, a:visited {color:royalblue;text-decoration: underline;}
+
+#intro {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    width: var(--side-bar-width);
+}
+
+iframe {
+    margin: 10px;
+}
+
+#body {
+    background: var(--white);
+    width: calc(100% - var(--side-bar-width));
+    overflow: auto;
+
+    box-shadow: 2px 2px 2px var(--box-shadow) inset;
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    font-size: 15px;
+}
+
+.tabcontent {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+    height: 90%;
+}
+
+ul {
+    margin: 0;
+}
+
+strong {
+    margin-top: 10px;
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+/** widget (general info, Attractions, Food) */
+.widget {
+    width: 80%;
+    padding: 4px;
+    border: 4px solid var(--black);
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 10px;
+    border-radius: 30px;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+/** Culture */
+.c-p {
+    margin: 0px 2.5em 2em 2.5em;
+}
+
+/** scroll bar */
+::-webkit-scrollbar {width: 1em;}
+::-webkit-scrollbar-track {border: none;background: var(--white);}
+::-webkit-scrollbar-thumb:hover {background: linear-gradient(var(--top), var(--bottom));}
+::-webkit-scrollbar-thumb {-webkit-border-radius: 1.250em;border-radius: 1.250em;border: 0.250em var(--white) solid;background: linear-gradient(var(--top), var(--bottom));}
+
+/** dark/light mode */
+.checkbox-wrapper-54 {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    z-index: 9999999;
+}
+
+.checkbox-wrapper-54 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.checkbox-wrapper-54 *,
+.checkbox-wrapper-54 ::after,
+.checkbox-wrapper-54 ::before {
+    box-sizing: border-box;
+}
+
+/* The switch - the box around the slider */
+.checkbox-wrapper-54 .switch {
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    display: inline-block;
+}
+
+/* The slider */
+.checkbox-wrapper-54 .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.checkbox-wrapper-54 .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    transition: .4s;
+}
+
+.checkbox-wrapper-54 input:checked + .slider {
+    background-color: #303136;
+}
+
+.checkbox-wrapper-54 input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+/** button */
+.button-75 {
+    background-image: linear-gradient(135deg, var(--top) 40%, var(--bottom));
+    border: var(--white) solid;
+    border-radius: 30px;
+    color: #1d2a35;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 5px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 200px;
+}
+
+.button-75:active {
+    transform: translate(0px, 2px);
+}
+
+/** drop down */
+.dropbtn {
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+    align-self: center;
+    font-size: 21px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: flex;
+    background-color: var(--white);
+    padding-left: 5px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Adjust as needed */
+    left: 0;
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: var(--light);
+    min-width: 162.17px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: var(--black);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: var(--dd-light);}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: var(--light);}
+.dropdown:hover {background-color: var(--light);}
+
+/** small sidebar */
+.mySidenav {
+    position: relative; /* Position them relative to the browser window */
+    left: -150px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+
+    padding-right: 40px;
+
+    border-radius: 0px 30px 30px 0px;
+}
+
+.mySidenav:hover {
+    left: -1.819px; /* On mouse-over, make the elements appear as they should */
+}
+
+/** donwload button */
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+}

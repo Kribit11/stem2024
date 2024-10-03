@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Guardian</title>
+
+        <!--~ stylesheet -->
+        <link rel="stylesheet" href="style-body.css">
+        <script> /* have this script after the stylesheet to update the screen height */
+            let screenHeight = window.innerHeight-60;
+            if (screenHeight > 631) {
+                document.documentElement.style.setProperty('--screen-height', `${screenHeight}px`);
+            }
+        </script>
+        <link rel="icon" href="images/favicon-trans.png">
+
+        <!--~ fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!--~ header -->
+        <header>
+            <div id="left">
+                <img id="titleimg" src="images/favicon-trans.png" alt="title img">
+                <span id="h1">Guardian</span>
+            </div>
+            <div id="menu">
+                <img onclick="window.location.href='index.html';"       class="link icon" id="home" src="images/home-l.png" alt="home">
+                <p   onclick="window.location.href='index.html';"       class="link headText">Home</p>
+                <img onclick="window.location.href='games.html';"       class="link icon" id="games" src="images/games-l.png" alt="games">
+                <p   onclick="window.location.href='games.html';"       class="link headText">Games</p>
+                <img onclick="window.location.href='meditation.html';"  class="link icon" id="meditation" src="images/meditation-l.png" alt="meditation">
+                <p   onclick="window.location.href='meditation.html';"  class="link headText">Meditation</p>
+                <img onclick="window.location.href='support.html';"     class="link icon" id="support" src="images/support-l.png" alt="support">
+                <p   onclick="window.location.href='support.html';"     class="link headText">Support</p>
+                <img onclick="window.location.href='CyberSafety.html';" class="link icon" id="CyberSafety" src="images/CyberSafety-l.png" alt="Cyber Safety">
+                <p   onclick="window.location.href='CyberSafety.html';" class="link headText">Cyber Safety</p>
+            </div>
+        </header>
+
+        <!--~ body -->
+        <div id="main">
+            <div id="intro">
+                <!--~ sidebar -->
+                <div id="sidebar">
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">2048</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Tetris</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Sling Drift</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidefour')"                ><span class="text">Tower Defence</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidefive')"                ><span class="text">Build your joy</span></button>
+                </div>
+                <div id="body">
+
+                    <!--~ widgets -->
+                    <div id="sideone" class="tabcontent">
+                        <h1>2048</h1>
+                        <iframe src="https://turbowarp.org/382035329/embed" allowtransparency="true" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div id="sidetwo" class="tabcontent">
+                        <h1>Tetris</h1>
+                        <iframe src="https://turbowarp.org/469540467/embed" allowtransparency="true" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div id="sidethree" class="tabcontent">
+                        <h1>Sling Drift</h1>
+                        <iframe src="https://turbowarp.org/468059517/embed" allowtransparency="true" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div id="sidefour" class="tabcontent">
+                        <h1>Tower Defence</h1>
+                        <iframe src="https://turbowarp.org/411210603/embed" allowtransparency="true" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div id="sidefive" class="tabcontent">
+                        <h1 style="margin-bottom: 3px;">Build your joy</h1>
+                        <h2>Minecraft Education</h2>
+                        <p style="font-size: 25px; font-weight: 400; margin: 0 20px 0 20px;">Dive into a world where emotions come to life and find what brings you joy!  In this Minecraft Education build challenge you will meet Joy and Anxiety from Inside Out 2. Solve a puzzle using Microsoft MakeCode then use Minecraft as a canvas to build a representation of something that brings joy to your life. To play this world you will need to have either Minecraft Bedrock or Minecraft Education Edition.</p>
+                        <button class="btn" onclick="download('Build_Your_Joy.mcworld')"> <i class="fa fa-download"></i>download </button>
+                        <img style="width: 90%; padding: 5px 0 20px 0;" src="images/buildjoy.jpg" alt="buildjoy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--~ donwload button -->
+        <script>
+            function download(url) {
+                const a = document.createElement('a')
+                a.href = url
+                a.download = url.split('/').pop()
+                document.body.appendChild(a)
+                a.click()
+                document.body.removeChild(a)
+            }
+        </script>
+
+        <!--~ hide title on small screen -->
+        <script>
+            var inner = document.getElementsByClassName("inner");
+            var imgL = document.getElementsByClassName("img-l");
+            var imgR = document.getElementsByClassName("img-r");
+            var content = document.getElementById('sidebar');
+            var elements = document.getElementsByClassName("headText");
+            var i;
+            
+            // List View
+            function smallMenuView() {
+                console.log("small")
+                for (i = 0; i < elements.length; i++) {
+                    elements[i].innerHTML = "";
+                }
+            }
+
+            // Grid View
+            function bigMenuView() {
+                console.log("full")
+                for (i = 0; i < elements.length; i++) {
+                    elements[0].innerHTML = "Home"
+                    elements[1].innerHTML = "Games"
+                    elements[2].innerHTML = "Meditation"
+                    elements[3].innerHTML = "Support"
+                    elements[4].innerHTML = "Cyber Safety"
+                }
+            }
+            
+            function bigSidebarView() {
+                content.innerHTML = `
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">2048</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Tetris</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Sling Drift</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidefour')"                ><span class="text">Tower Defence</span></button>
+                    <button class="button-75 tablinks" role="button" onclick="explore(event, 'sidefive')"                ><span class="text">Build your joy</span></button>
+                `;
+                document.documentElement.style.setProperty('--side-bar-width', '200px');
+            }
+
+            function smallSidebarView() {
+                content.innerHTML = `
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sideone')" id="defaultOpen"><span class="text">2048</span></button>
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidetwo')"                 ><span class="text">Tetris</span></button>
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidethree')"               ><span class="text">Sling Drift</span></button>
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidefour')"                ><span class="text">Tower Defence</span></button>
+                    <button class="button-75 tablinks mySidenav" role="button" onclick="explore(event, 'sidefive')"                ><span class="text">Build your joy</span></button>
+                `;
+                document.documentElement.style.setProperty('--side-bar-width', '55px');
+            }
+
+            function checkScreenWidth() {
+                if (window.innerWidth < 965) {
+                    smallSidebarView();
+                    document.getElementById("h1").innerHTML = "";
+                    smallMenuView();
+                } else if (window.innerWidth < 1000) {
+                    smallSidebarView();
+                    document.getElementById("h1").innerHTML = "";
+                    bigMenuView();
+                } else if (window.innerWidth < 1082) {
+                    bigSidebarView();
+                    document.getElementById("h1").innerHTML = "";
+                    bigMenuView();
+                } else {
+                    bigSidebarView();
+                    document.getElementById("h1").innerHTML = "Guardian";
+                    bigMenuView(); 
+                }
+            }
+            checkScreenWidth();
+            window.addEventListener('resize', checkScreenWidth);
+        </script>
+
+        <!--~ side tabs -->
+        <script>
+            function explore(evt, Name) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                    tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(Name).style.display = "flex";
+                evt.currentTarget.className += " active";
+            }
+            
+            document.getElementById("defaultOpen").click();
+        </script>
+
+        <!--~ dark/light mode -->
+        <div class="checkbox-wrapper-54">
+            <label class="switch">
+                <input type="checkbox" id="toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <script>
+            const toggle = document.getElementById('toggle');
+            const images = ['home', 'games', 'meditation', 'support', 'CyberSafety'];
+
+            //  Function to apply dark mode
+            function applyDarkMode() {
+                document.documentElement.style.setProperty('--black', '#f3eeeb');
+                document.documentElement.style.setProperty('--white', '#1d2a35');
+                images.forEach(id => {
+                    document.getElementById(id).src = `images/${id}-d.png`;
+                });
+            }
+
+            // Function to apply light mode
+            function applyLightMode() {
+                document.documentElement.style.setProperty('--black', '#1d2a35');
+                document.documentElement.style.setProperty('--white', '#f3eeeb');
+                images.forEach(id => {
+                    document.getElementById(id).src = `images/${id}-l.png`;
+                });
+            }
+
+            // Event listener for the toggle button
+            toggle.addEventListener('change', () => {
+                if (toggle.checked) {
+                    applyDarkMode();
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    applyLightMode();
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+
+            // Check the saved preference and apply it
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                toggle.checked = true;
+                applyDarkMode();
+            } else {
+                applyLightMode();
+            }
+        </script>
+    </body>
+</html>

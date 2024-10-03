@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Guardian</title>
+
+        <!--~ stylesheet -->
+        <link rel="stylesheet" href="style-home.css">
+        <script> /* have this script after the stylesheet to update the screen height */
+            let screenHeight = window.innerHeight-60;
+            if (screenHeight > 631) {
+                document.documentElement.style.setProperty('--screen-height', `${screenHeight}px`);
+            }
+        </script>
+        <link rel="icon" href="images/favicon-trans.png"> <!--! fix the image -->
+
+        <!--~ fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--~ header -->
+        <header>
+            <div id="left">
+                <img id="titleimg" src="images/favicon-trans.png" alt="title img">
+                <span id="h1">Guardian</span>
+            </div>
+            <div id="menu">
+                <img onclick="window.location.href='index.html';"       class="link icon" id="home" src="images/home-l.png" alt="home">
+                <p   onclick="window.location.href='index.html';"       class="link headText">Home</p>
+                <img onclick="window.location.href='games.html';"       class="link icon" id="games" src="images/games-l.png" alt="games">
+                <p   onclick="window.location.href='games.html';"       class="link headText">Games</p>
+                <img onclick="window.location.href='meditation.html';"  class="link icon" id="meditation" src="images/meditation-l.png" alt="meditation">
+                <p   onclick="window.location.href='meditation.html';"  class="link headText">Meditation</p>
+                <img onclick="window.location.href='support.html';"     class="link icon" id="support" src="images/support-l.png" alt="support">
+                <p   onclick="window.location.href='support.html';"     class="link headText">Support</p>
+                <img onclick="window.location.href='CyberSafety.html';" class="link icon" id="CyberSafety" src="images/CyberSafety-l.png" alt="Cyber Safety">
+                <p   onclick="window.location.href='CyberSafety.html';" class="link headText">Cyber Safety</p>
+            </div>
+        </header>
+
+        <!--~ body -->
+        <div id="main">
+            <h1>Guardian</h1>
+            <h2>Wellbeing hub</h2>
+            <div id="intro">
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        
+                        <img src="images/stat1.jpeg" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides fade">
+                       
+                        <img src="images/stat2.jpeg" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides fade">
+                      
+                        <img src="images/stat3.jpeg" style="width:100%">
+                    </div>
+                </div>
+                <br>
+                
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!--~ hide title on small screen -->
+        <script>
+            function checkScreenWidth() {
+                if (window.innerWidth < 1082) {
+                    document.getElementById("h1").innerHTML = ""
+                } else {
+                    document.getElementById("h1").innerHTML = "Guardian"
+                }
+            }
+            var elements = document.getElementsByClassName("headText");
+            var i;
+
+            // List View
+            function smallView() {
+                console.log("small")
+                for (i = 0; i < elements.length; i++) {
+                    elements[i].innerHTML = "";
+                }
+            }
+
+            // Grid View
+            function fullView() {
+                console.log("full")
+                for (i = 0; i < elements.length; i++) {
+                    elements[0].innerHTML = "Home"
+                    elements[1].innerHTML = "Games"
+                    elements[2].innerHTML = "Meditation"
+                    elements[3].innerHTML = "Support"
+                    elements[4].innerHTML = "Cyber Safety"
+                }
+            }
+
+            function checkScreenWidth() {
+                if (window.innerWidth < 952) {
+                    smallView();
+                    document.getElementById("h1").innerHTML = "";
+                } else if (window.innerWidth < 1082) {
+                    fullView();
+                    document.getElementById("h1").innerHTML = "";
+                } else {
+                    fullView();
+                    document.getElementById("h1").innerHTML = "Guardian";
+                }
+            }
+            checkScreenWidth();
+            window.addEventListener('resize', checkScreenWidth);
+
+        </script>
+
+        <!--~ slideshow -->
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 8000); // Change image every 2 seconds
+            }
+        </script>
+        
+        <!--~ dark/light mode -->
+        <div class="checkbox-wrapper-54">
+            <label class="switch">
+                <input type="checkbox" id="toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <script>
+            const toggle = document.getElementById('toggle');
+            const images = ['home', 'games', 'meditation', 'support', 'CyberSafety'];
+
+            // Function to apply dark mode
+            function applyDarkMode() {
+                document.documentElement.style.setProperty('--black', '#f3eeeb');
+                document.documentElement.style.setProperty('--white', '#1d2a35');
+                images.forEach(id => {
+                    document.getElementById(id).src = `images/${id}-d.png`;
+                });
+            }
+
+            // Function to apply light mode
+            function applyLightMode() {
+                document.documentElement.style.setProperty('--black', '#1d2a35');
+                document.documentElement.style.setProperty('--white', '#f3eeeb');
+                images.forEach(id => {
+                    document.getElementById(id).src = `images/${id}-l.png`;
+                });
+            }
+
+            // Event listener for the toggle button
+            toggle.addEventListener('change', () => {
+                if (toggle.checked) {
+                    applyDarkMode();
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    applyLightMode();
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+
+            // Check the saved preference and apply it
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                toggle.checked = true;
+                applyDarkMode();
+            } else {
+                applyLightMode();
+            }
+        </script>
+    </body>
+</html>
